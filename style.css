@@ -1,0 +1,592 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    padding-top: 60px; /* igual à altura do cabeçalho fixo */
+}
+
+/* Cabeçalho1 */
+#logo-cabeçalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 9999;
+    padding: 5px 10px;
+
+    display: flex;
+    justify-content: space-between; /* empurra os dois lados */
+    align-items: center;
+    box-sizing: border-box;
+    height: 60px;
+
+    border-bottom: 2px solid green;
+}
+
+.lado-esquerdo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lado-direito {
+    display: flex;
+    gap: 15px;
+}
+
+.lado-direito a {
+    cursor: pointer;       /* parece botão */
+    user-select: none;     /* não deixa selecionar texto */
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    text-decoration: none;
+
+    /* Transição suave para cor */
+    transition: color 0.3s ease;
+}
+
+.lado-direito a:hover {
+    color: green; /* Exemplo de cor ao passar o mouse */
+}
+
+#logo-cabeçalho img {
+    width: 90px;
+    height: auto;
+    display: block;
+}
+
+#logo-cabeçalho p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+/* Cabeçalho2 */
+#titulo-cabecalho {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    gap: 15px;
+}
+
+.futuro-vertical {
+    margin-left: 80px; /* Ajuste o valor conforme quiser */
+    display: flex;
+    flex-direction: column;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 1em;
+    line-height: 1.2;
+    text-align: center;
+    border-right: 2px solid black;
+    padding-right: 10px;
+
+    /* Transição para mudanças futuras */
+    transition: padding-right 0.3s ease, margin-left 0.3s ease;
+}
+
+#titulo-cabecalho h1 {
+    font-size: 1.4em;
+    margin: 0;
+    padding-left: 10px;
+    color: #222;
+    font-family: sans-serif;
+}
+
+/* Container do slider */
+.slider {
+    width: 100%;
+    height: 750px;
+    overflow: hidden;
+    background-color: #000;
+    border-top: 1px solid #333333; /* linha cinza clara */
+border-top: 50px solid #333333;
+}
+
+/* Área que desliza os slides */
+figure {
+    position: relative;
+    left: 0;
+    width: 500%; /* 5 slides */
+    display: flex;
+    animation: slide 30s infinite;
+    overflow: visible; /* permite que o texto absoluto fique visível */
+}
+
+/* Cada slide */
+.slide {
+    position: relative;
+    width: 20%;
+    overflow: visible; /* permite que o texto não seja cortado */
+}
+
+/* Imagens dos slides */
+.slide img {
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Texto dentro da imagem, na parte de baixo */
+.slide h5 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    font-size: 1.9em;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* Animação */
+@keyframes slide {
+    0%   { left: 0%; }
+    16%  { left: 0%; }
+    20%  { left: -100%; }
+    36%  { left: -100%; }
+    40%  { left: -200%; }
+    56%  { left: -200%; }
+    60%  { left: -300%; }
+    76%  { left: -300%; }
+    80%  { left: -400%; }
+    96%  { left: -400%; }
+    100% { left: 0%; }
+}
+
+#box {
+    position: relative;
+    padding: 166px;
+    text-align: center;  /* Centraliza o texto */
+}
+
+#box h4 {
+    position: absolute;
+    top: 100px; /* Aumenta para descer 10px do topo */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+}
+
+#container2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    padding: 100px;
+
+    /* Transição para suavizar mudanças */
+    transition: padding 0.5s ease, gap 0.5s ease, background-color 0.5s ease;
+}
+
+#container2:hover {
+    padding: 80px; /* exemplo de mudança ao passar mouse */
+    background-color: #f0f0f0; /* leve mudança visual */
+}
+
+.texto p {
+    font-size: 20px;
+    transition: color 0.3s ease;
+}
+
+.texto p:hover {
+    color: green; /* muda cor no hover */
+}
+
+.texto {
+    font-size: 16px;
+}
+
+#container2 img {
+    width: 45%;
+    object-fit: cover;
+
+    /* Transição para suavizar mudanças */
+    transition: transform 0.3s ease;
+}
+
+#container2 img:hover {
+    transform: scale(1.05); /* leve zoom no hover */
+}
+
+#container3 {
+    height: 66px;
+    background-color: #7BAC49;
+}
+
+#container3 p {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 50%;
+}
+
+/* Carrossel manual */
+.carousel-manual {
+    max-width: 1440px;
+    height: 850px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    border: 2px solid #ccc;
+}
+
+.slides-manual {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-m {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.slide-m img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Mostra o slide ativo */
+#m1:checked ~ .slides-manual .s1,
+#m2:checked ~ .slides-manual .s2,
+#m3:checked ~ .slides-manual .s3,
+#m4:checked ~ .slides-manual .s4,
+#m5:checked ~ .slides-manual .s5 {
+    opacity: 1;
+    z-index: 1;
+}
+
+/* Setas */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 12px 17px;
+    font-size: 2em;
+    cursor: pointer;
+    border-radius: 50%;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Esconde os inputs */
+input[type="radio"] {
+    display: none;
+}
+
+/* Texto dentro da imagem no carrossel manual */
+.slide-m h4 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: rgba(0, 0, 0, 0.5); /* fundo preto meio transparente */
+    font-size: 1.8em;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+    box-sizing: border-box;
+}
+
+/* Container dos cards */
+.cards-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    background-color: #ffd84f; /* Amarelo de fundo, igual na imagem */
+    padding: 60px 20px;
+    flex-wrap: wrap; /* Responsivo */
+
+    /* Transição para suavizar mudança de gap e cor */
+    transition: background-color 0.3s ease, gap 0.3s ease;
+}
+
+.cards-container:hover {
+
+    gap: 30px; /* exemplo de alteração */
+}
+
+/* Estilo dos cards */
+.card {
+    background-color: #f1f1f1;
+    width: 320px;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    background-color: #eaeaea;
+}
+
+/* Imagem circular */
+.card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 4px solid white;
+
+    transition: transform 0.3s ease;
+}
+
+.card img:hover {
+    transform: scale(1.1);
+}
+
+/* Título */
+.card h3 {
+    margin-bottom: 15px;
+    font-size: 1.2em;
+    color: #333;
+
+    transition: color 0.3s ease;
+}
+
+.card:hover h3 {
+    color: green;
+}
+
+/* Texto */
+.card p {
+    font-size: 0.95em;
+    color: #444;
+    line-height: 1.5;
+
+    transition: color 0.3s ease;
+}
+
+.card:hover p {
+    color: #222;
+}
+
+#card-virado {
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+#card-virado:hover {
+    transform: rotate(45deg) scale(1.05);
+}
+
+#container5 {
+    padding: 196px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#container5 h3 {
+    font-size: 30px;
+}
+
+
+
+
+#container7 {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 12px;
+    margin-top: 40px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+#container7 h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+color: #333333;
+}
+
+.entrevista {
+    background-color: #ffffff;
+    padding: 20px;
+    border-left: 4px solid #4CAF50;
+    border-radius: 8px;
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+.entrevista strong {
+    color: #333333;
+}
+
+.entrevista .fonte {
+    margin-top: 15px;
+    font-size: 14px;
+    color: #555;
+}
+
+.entrevista .fonte a {
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.entrevista .fonte a:hover {
+    text-decoration: underline;
+}
+    
+.placa{
+text-align: center ;
+}
+
+
+
+.container-cartoes {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 60px;
+    background-color: #f8f8f8;
+
+    transition: background-color 0.3s ease, gap 0.3s ease;
+}
+
+.container-cartoes:hover {
+    background-color: #e1e1e1;
+    gap: 30px;
+}
+
+.cartao {
+    background-color: #7BAC49;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 30px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.cartao:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    background-color: #8fc15f;
+}
+
+.cartao h3 {
+    margin-bottom: 15px;
+    color: white;
+
+    transition: color 0.3s ease;
+}
+
+.cartao:hover h3 {
+    color: #e0ffe0;
+}
+
+.cartao p {
+    color: white;
+    font-size: 16px;
+    line-height: 1.4;
+
+    transition: color 0.3s ease;
+}
+
+.cartao:hover p {
+    color: #d0f0d0;
+}
+
+/* Outras classes que você tinha */
+
+.img-mercado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 1000px;
+}
+
+.imagem-reduzida {
+    margin-top: -90px; /* sobe a imagem */
+    width: 1800px; /* ou ajuste como preferir */
+    height: auto; /* mantém proporção */
+}
+
+#container6 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 60px;
+}
+
+.texto-lado {
+    flex: 1;
+    font-size: 20px;
+}
+
+.imagem-lado {
+    width: 300px;
+    height: auto;
+}
+
+.texto-lado h3 {
+    font-size: 30px;
+}
+#rodape {
+  background-color: #333333; /* cinza claro */
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+
+  margin-top: 60px;
+}
+
+.conteudo-rodape h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: #000;
+}
+
+.conteudo-rodape h4 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+.conteudo-rodape p {
+  font-size: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.creditos-rodape {
+  margin-top: 30px;
+  font-size: 16px;
+  color: white;
+}
